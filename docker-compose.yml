@@ -17,6 +17,8 @@ services:
       - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASSWORD=changeme
+    depends_on:
+      - db
 
   db:
     image: postgres:13-alpine
@@ -28,4 +30,5 @@ services:
       - POSTGRES_PASSWORD=changeme
 
 volumes:
+
   dev-db-data:
